@@ -47,3 +47,7 @@ out/
 /*.out
 out_expected.txt
 /*-timing.json
+
+src/main/zig/vyeph/zig-out/
+src/main/zig/vyeph/zig-cache/
+data/measurements.txt
