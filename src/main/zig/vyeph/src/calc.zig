@@ -43,10 +43,10 @@ pub fn main() anyerror!void {
     var file = try std.fs.cwd().openFile(file_path, .{});
     defer file.close();
 
-    const buffer_size = 4096;
+    const buffer_size = 2048 * 2;
     var buffer: [buffer_size * 2]u8 = undefined;
     @memset(&buffer, 0);
-    const line_buffer: *[buffer_size]u8 = buffer[4096..];
+    const line_buffer: *[buffer_size]u8 = buffer[buffer_size..];
 
     const file_reader = file.reader();
     var buf_reader = std.io.BufferedReader(buffer_size, @TypeOf(file_reader)){ .unbuffered_reader = file_reader };
